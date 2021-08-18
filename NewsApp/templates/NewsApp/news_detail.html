@@ -1,0 +1,20 @@
+{% extends 'NewsApp/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ article.title }}</title>
+</head>
+<body>
+{% block content_detail %}
+<h2>{{ article.title }}</h2>
+<br>
+<hr>
+<img src="{{ article.image.url }}" height="auto" width="auto"></img><br>
+<p>{{ article.content|safe }}</p><br>
+<h5>Կատեգորիա՝ {{ article.category }}</h5>
+<h5>Հեղինակ՝ {{ article.author }}</h5>
+<h5>Հրապարակվել է՝ {{ article.date|date:"Y-m-d H:i:s" }}</h5><br>
+{% endblock %}
+</body>
+</html>
